@@ -4,8 +4,8 @@
 def score_reader():
     scores_txt = open('scores.txt')
     scores = {}
-    for line in scores_txt:
-        line = line.rstrip()
+    for line in scores_txt.readlines(): #reading line by line.
+        line = line.rstrip() #removes whitespace to the right
         restaurant, score = line.split(':')
         scores[restaurant] = int(score)
     return scores
